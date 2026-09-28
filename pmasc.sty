@@ -1,0 +1,77 @@
+% -----------------------------------------------------------------------------------------------------
+% переобозначим сабсабсекцию, чтобы она обнуляла пойнты
+\renewcommand\subsubsection{\@startsection{subsubsection}{3}{\parindent\setcounter{point}{0}}%
+                                     {\ESKDsubsubsectionSkipBefore}%
+                                     {2mm}%{\ESKDsubsubsectionSkipAfter}%
+                                     {\ESKDsubsubsectionAlign\ESKDsubsubsectionStyle}}
+
+
+\renewcommand{\thepoint}{\thesubsubsection.\arabic{point}}
+
+\ifnum\pdfoutput=0 
+ 
+   \renewcommand{\point}[1]{%
+    {\bf \addvspace{3mm} \par\refstepcounter{point}\thepoint\quad #1 
+   \vspace{3mm}}
+   \addcontentsline{toc}{paragraph}{\thepoint \quad #1}}
+
+% Переопределение заголовка сабпойнт
+   \renewcommand{\subpoint}[1]{%
+    {\par\refstepcounter{subpoint}\thesubpoint\quad #1}
+   \vspace{2mm}
+   %\phantomsection
+   \addcontentsline{toc}{subparagraph}{\thesubpoint \quad #1}}
+
+\else
+
+% Переопределение заголовка пойнт
+\renewcommand{\point}[1]{%
+{\bf \addvspace{3mm} \par\refstepcounter{point}\thepoint\quad #1 
+\vspace{3mm}}
+\phantomsection\addcontentsline{toc}{paragraph}{\thepoint \quad #1}}
+
+% Переопределение заголовка сабпойнт
+\renewcommand{\subpoint}[1]{%
+ {\par\refstepcounter{subpoint}\thesubpoint\quad #1}
+\vspace{2mm}
+\phantomsection
+\addcontentsline{toc}{subparagraph}{\thesubpoint \quad #1}}
+
+
+
+\fi
+
+
+
+\addto\captionsrussian{\renewcommand\contentsname{ОГЛАВЛЕНИЕ}} 
+\setcounter{tocdepth}{6} % Добавим в оглавление Point
+
+% -----------------------------------------------------------------------------------------------------
+
+	\newcounter{tt1}
+	\newcounter{tt2}
+	\newcounter{tt3}
+	\newcommand{\p}{\stepcounter{tt1}\setcounter{tt2}{0}\arabic{tt1}. }
+	\newcommand{\pc}{\setcounter{tt1}{0}}
+	\newcommand{\pp}{\stepcounter{tt2}\hspace{2mm}\arabic{tt1}.\arabic{tt2}. }
+	\newcommand{\ppc}{\setcounter{tt2}{0}}
+
+	\newcommand{\ppp}{\stepcounter{tt3}\arabic{tt3}}
+	\newcommand{\pppc}{\setcounter{tt3}{0}}
+
+% счетчик для описания tab order в описании интерфейсов и логики форм
+	\newcounter{tabc}
+	\newcommand{\torc}{\setcounter{tabc}{0}}
+	\newcommand{\tor}{\stepcounter{tabc}\arabic{tabc}}
+% ======================================================
+
+
+\usepackage[dvipsnames]{xcolor}
+\newcommand{\red}[1]{\textcolor{Red}{#1}}
+\newcommand{\green}[1]{\textcolor{Green}{#1}}
+\newcommand{\blue}[1]{\textcolor{Blue}{#1}}
+
+
+\newcommand{\myobject}[1]{\blue{\##1}} % для обозначения документов и справочников
+\newcommand{\myform}[1]{\blue{\$#1}}   % для обозначения форм и кнопок
+\newcommand{\myrep}[1]{\blue{@#1}}    % для обозначения отчетов

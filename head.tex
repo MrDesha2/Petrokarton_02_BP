@@ -1,0 +1,89 @@
+\ifx \notincludehead\undefined
+    \newcommand*{\No}{\textnumero}
+ 
+    \documentclass[russian, utf8, 12pt, pointsubsection,floatsubsection]{eskdtext}
+    \usepackage[russian]{babel}
+
+	\ifx\pdfoutput\undefined  
+		\def\pdfoutput{0}
+	\fi
+
+	\ifnum\pdfoutput=0 
+		\sloppy
+		%	\usepackage[dvips]{graphicx}       % загрузка графики под dvi  
+		\textheight=250mm                  % для DVI высота печатного текста
+		\textwidth=165mm                   % ширина печатного текста
+	\else
+		%	\usepackage[pdftex]{graphicx}      % загрузка графики под pdf
+		\usepackage{cmap}                  % чтоб работал поиск по PDF 
+		% гиперссылки в PDF
+		\usepackage[unicode, pdftex, colorlinks, linkcolor=blue]{hyperref} 
+		\pdfcompresslevel=9                % сжимаем PDF 
+		%	\textheight=240mm                  % для PDF высота печатного текста
+		%	\textwidth=165mm                   % ширина печатного текста
+	\fi 
+
+	\usepackage{eskdchngsheet}
+	\usepackage[T2A]{fontenc}
+	%\usepackage[cp1251]{inputenc}
+	\usepackage{amstext}
+	\usepackage{amsmath}
+	\usepackage{listings}
+	\usepackage{rotating}
+	\usepackage{pmasc}
+    % пакет placeins позволяет вставлять плавающие объекты (рисунки) в том месте, 
+    % где это необходимо. Для вывода рисунка после него встаить команду \FloatBarrier
+	\usepackage{placeins}    
+    
+	\usepackage{array}
+	\usepackage{longtable}   % подключение длинных таблиц
+	\usepackage{indentfirst} % идентификация первых абзацев после секционирования
+	\usepackage{fancyhdr}    % расширенный формат страниц
+	\usepackage{ulem}        % подчеркивания текста \uline\uuline\uwave\sout \xout
+	%\voffset=-25mm   % -25         % сдвиг страницы вверх
+	%\hoffset=-15mm   % -10         % сдвиг страницы влево
+    \usepackage{graphicx}
+    \usepackage{floatflt} % для рисунков
+	\usepackage{wrapfig}  % для рисунков
+    \usepackage{todonotes} % тудушки
+	\usepackage{xspace}    % убрать лишние пробелы
+	\usepackage{comment}   % комментировать блоками
+    %\usepackage[usenames]{color}
+    %\usepackage{colortbl}
+
+	\sloppy                             % подавление дополнительных переносов
+	\righthyphenmin=2                   % можно переносить
+	
+	\ESKDclassCode{ТП}
+	\ESKDtitle{Программная система планирования производства ПС ПП «Opti-Paper»}
+
+	\usepackage{lscape}
+
+	% для Первой спецификации
+	\ESKDdocName{Описание бизнес-процессов}
+	\ESKDsignature{\ESKDNUM}
+	\ESKDcolumnII{\ESKDNUM}
+	\ESKDcolumnI{Программная документация. БП. Ред.1}
+
+	\ESKDgroup{ООО <<Опти-Софт>>}
+	\ESKDauthor{Косицын Д.П.}
+	\ESKDtitleAgreedBy{Директор ООО <<Опти-Софт>>}{Шабаев А.И.}
+	\ESKDtitleDesignedBy{Зам. директора <<Опти-Софт>>}{Косицын Д.П.}
+    \ESKDtitleDesignedBy{Консультант}{Жернаков Р.В.}	
+    \ESKDtitleDesignedBy{Начальник отдела разработки}{Сошкин Р.В.}
+
+
+	\ESKDtitleApprovedBy{Генеральный директор \FIRMA}{\DIRECTOR}
+	%\ESKDtitleApprovedBy{\rule{72pt}{1pt}}{\rule{72pt}{1pt}}
+	\ESKDtitleAgreedBy{Директор по производству}{ФИО}
+	\ESKDtitleAgreedBy{Коммерческий директор}{ФИО}
+
+	%\ESKDtitleAgreedBy{\rule{72pt}{1pt}}{\rule{72pt}{1pt}}
+
+	\ESKDdate{2026/01/20}
+    \frenchspacing
+    %	\newcommand*{\No}{\textnumero}
+	% для нумерации в длинных enumerate: a, b,...y, z, aa,ab,..
+	%\usepackage{alphalph}  
+	%\renewcommand{\theenumi}{\alphalph{\value{enumi}}}
+\fi

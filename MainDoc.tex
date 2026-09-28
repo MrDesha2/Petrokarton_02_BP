@@ -1,0 +1,84 @@
+\input{head.tex}
+\def \notincludehead{}
+%\newcommand*{\No}{\textnumero}
+
+\input{names}
+
+
+\begin{document}
+
+	% титульный лист 
+ 	\maketitle
+
+	% содержание ЕСКД
+% 	\input{contents_eskd.tex}
+%  	\newpage
+
+	% оглавление 
+	\scriptsize
+	\setcounter{tocdepth}{4}
+	\tableofcontents
+	\normalsize
+	\newpage
+
+ 	\input{agreement.tex}
+ 	
+ 	\input{change_eskd.tex} 	
+ 	
+ 	\newpage
+ 	
+ 	
+ \section*{Словарь терминов и сокращений}
+\noindent
+
+\begin{tabular}{l l}
+% {\bf ОКК}  & --- Отдел контроля качества.\\
+% {\bf ППО}  & --- Планово-производственный отдел.\\
+{\bf г/к}, {\bf ГК}  & --- Гофрокартон.\\
+{\bf ГП}  & --- Готовая продукция.\\
+{\bf ПФ}  & --- Полуфабрикат (заготовка).\\
+% {\bf ГОГП}  & --- группа по отпуску готовой продукции.\\
+{\bf ЛГК}, {\bf ГА}, {\bf Г/А}  & --- Гофроагрегат.\\
+% {\bf ДП}  & --- Департамент продаж.\\
+{\bf ЛП}, {\bf ПЛ}  & --- Линия переработки, перерабатывающая линия.\\
+{\bf ТК}  & --- Технологическая карта.\\
+	
+\end{tabular}
+
+
+
+
+
+
+\newcommand*{\IsScancode}{0}  % Если {1}, то соберётся файл с применением ШК
+\newcommand*{\IsOKP}{0}       % Если {1}, нужно ОКП?
+\newcommand*{\IsOPC}{0}       % Если {1}, нужны датчики и OPC?
+
+
+
+\newpage
+
+
+
+	% документ
+% 	\section{Общие положения}
+  	\input{01_BP/unit_0.tex}
+
+\newpage   
+     \input{01_BP/unit_1}
+     \input{01_BP/unit_1_1.tex}
+     \input{01_BP/unit_1_2.tex}
+     \input{01_BP/unit_1_3.tex}
+     \input{01_BP/unit_1_4.tex}
+     % \input{01_BP/unit_1_5.tex}
+     \input{01_BP/unit_1_6_Shipment.tex}
+     \input{01_BP/unit_1_7.tex}
+     \input{01_BP/unit_1_8.tex}
+     \input{01_BP/unit_1_9.tex}
+     \input{01_BP/unit_1_10.tex}
+ 	 %\input{01_BP/unit_1.tex}
+
+ 	\input{01_BP/unit_2.tex}  % схемы
+ 	
+ 	\input{01_BP/unit_3.tex}  % карта рабочих мест 
+\end{document}
